@@ -1,0 +1,4 @@
+awk '{print $3,$2}' ./ponits.txt | gmt select  -FCN-border-L1.dat  -fg > select.point
+
+
+
