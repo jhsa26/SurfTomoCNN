@@ -1,5 +1,10 @@
 # SurfTomo_CNN
+
+Reference: Hu et al., (2019) Using deep learning to derive shear wave velocity models from surface wave dispersion (submitted to SRL)
+
 This repository is used to store scripts and an example of surface tomography given real data set
+
+The dataset and scripts are the part of the paper (section 3.1) for the continental China case.
 
 # Configuration 
 
@@ -21,9 +26,9 @@ Test dataset:    ~4000 pairs of disperion images associated with phase and group
 
 # Two tests
 
-- `scriptsUSA`: using only USA type training dataset to train and then using test dataset to predict 1-D Vs models
+- `scriptsUSA`: using only USA type as a training dataset to train and then using test dataset to predict 1-D Vs models
 
-- `scriptsUSATibet`: using USA type plus ~640 Tibet models as training dataset and then using test dataset to predict 1-D Vs models
+- `scriptsUSATibet`: using USA type plus ~640 Tibet models as a training dataset and then using test dataset to predict 1-D Vs models
 
 # How to run
 
