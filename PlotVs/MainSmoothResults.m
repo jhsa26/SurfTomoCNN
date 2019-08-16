@@ -1,4 +1,3 @@
-function main()
 clc
 clear 
 close all
@@ -8,30 +7,18 @@ nfiles=length(allfiles)-1;
 for i=1:nfiles
     filename_prefix = allfiles{i}; 
     temp=load([vs_layer_dir    allfiles{i,1}]);
-    vel = [temp,ones(length(temp),1)*0.1];
-    profile = vel(:,1:2);
-    vs = krig_interp(profile,vel);
-    temp(:,3) = vs(:);
+    vel_sws          = [temp(:,1:2),temp(:,3),ones(length(temp),1)*0.1]; profile_sws = vel_sws(:,1:2);
+    vel_cnn_USA      = [temp(:,1:2),temp(:,4),ones(length(temp),1)*0.1]; profile_USA = vel_cnn_USA(:,1:2);
+    vel_cnn_USATibet = [temp(:,1:2),temp(:,5),ones(length(temp),1)*0.1]; profile_USATibet = vel_cnn_USATibet(:,1:2);
+     
+    vs1 = krig_interp(profile_sws,vel_sws);
+    vs2 = krig_interp(profile_USA,vel_cnn_USA);
+    vs3 = krig_interp(profile_USATibet,vel_cnn_USATibet);
+    temp(:,3) = vs1(:);
+    temp(:,4) = vs2(:);
+    temp(:,5) = vs3(:);
     save([vs_layer_dir    allfiles{i,1}],'temp','-ascii')
 end
-end 
+ 
 
-function vs = krig_interp(profile,vel)
 
-x = profile(:,1);       y = profile(:,2);
-M = size(profile,1);    vs = zeros(M,1);
-
-for i = 1:M
-    
-    d = ( (x(i)-vel(:,1)).^2  + (y(i)-vel(:,2)).^2 ).^0.5 ;
-    d(d>1) = 0;
-    d = d+1;
-    d(d==1) = 0;
-    tp = d.*vel(:,4);
-    id = find(tp);
-    tp = tp(tp>0);
-    vs(i) = sum( vel(id,3)./tp )/sum( 1./tp );
-    
-end
-
-end
