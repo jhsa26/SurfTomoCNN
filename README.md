@@ -1,6 +1,6 @@
 # SurfTomo_CNN
 
-Reference: Hu et al., (2019) Using deep learning to derive shear wave velocity models from surface wave dispersion (submitted to SRL)
+**Reference: Hu et al., (2019) Using deep learning to derive shear wave velocity models from surface wave dispersion [[submitted to SRL]](https://jhsa26.github.io/book/Mypaper/Hu_etal2019SRL.pdf)**
 
 This repository is used to store scripts and an example of surface tomography given real data set
 
