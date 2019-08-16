@@ -1,0 +1,4 @@
+if you run test, sh Main_test.sh
+if you run train, sh Main_train.sh. After training, you can use the PlotTrainingLoss.py to plot training and validation loss against epoch number.
+
+ 
