@@ -1,10 +1,9 @@
 # SurfTomo_CNN
 This repository is used to store scripts and an example of surface tomography given real data set
 
-
 # Configuration 
 
-- You should install Pytorch 0.4 version and Anaconda3.4 and tensorboardX and basemap (for plotVs). 
+- You should install Pytorch 0.4 version and Anaconda3.4 and tensorboardX and basemap (for plotting Vs). 
 
 `conda install pytorch=0.4.0 cuda90 -c pytorch; pip install tensorboardX;`
 
@@ -20,15 +19,15 @@ Training dataset: USA type (~7000 1-D Vs models from the USA (Shen et al., 2013)
 
 Test dataset:    ~4000 pairs of disperion images associated with phase and group velocity (8-50s). (Shen et al., 2016)
 
-# two tests
+# Two tests
 
 - `scriptsUSA`: using only USA type training dataset to train and then using test dataset to predict 1-D Vs models
 
 - `scriptsUSATibet`: using USA type plus ~640 Tibet models as training dataset and then using test dataset to predict 1-D Vs models
 
-# run
+# How to run
 
-For both testsi, if you train again, run `Main_train.sh`. If you test, run `Main_test.sh`
+For both tests, if you train again, run `Main_train.sh`. If you test, run `Main_test.sh`
 
 The trained model at 600th epoch is included in `model_para`
 
