@@ -44,3 +44,5 @@ The trained model at 600th epoch is included in `model_para`
 It would read `./scriptsUSA/vs_cnn and ./scriptsUSATibet/vs_cnn` as well as `./PlotVs/data/vs_sws_China` to plot
 
 
+# please move to a new version
+https://github.com/jhsa26/SurfTomoCNN-new
